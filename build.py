@@ -15,12 +15,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 sys.path.insert(0, str(ROOT))
-from lib.descriptions import DESC
-from lib.manual_data import MANUAL_GEO, SPECIFIC_DURATION, SPECIFIC_PRE_BUFFER, HEBREW_TR
+from descriptions import DESC
+from manual_data import MANUAL_GEO, SPECIFIC_DURATION, SPECIFIC_PRE_BUFFER, HEBREW_TR
 
 MY_MAPS_MID = os.environ.get("MY_MAPS_MID", "1auRDMFLkK3rKKc5S2lpAZQI8GooGjY8")
 SHEET_CSV_URL = os.environ.get("SHEET_CSV_URL", "").strip()
-FALLBACK_CSV = ROOT / "data" / "itinerary.csv"
+FALLBACK_CSV = ROOT / "itinerary.csv"
 
 
 # ---------------------------------------------------------------- fetch
@@ -307,11 +307,11 @@ def enrich(days, places):
 
 # ---------------------------------------------------------------- render
 def render(days, places):
-    css = (ROOT / "templates" / "style.css").read_text(encoding="utf-8")
-    js = (ROOT / "templates" / "app.js").read_text(encoding="utf-8")
-    shell = (ROOT / "templates" / "index.html").read_text(encoding="utf-8")
-    leaflet_css = (ROOT / "vendor" / "leaflet.css").read_text(encoding="utf-8")
-    leaflet_js = (ROOT / "vendor" / "leaflet.js").read_text(encoding="utf-8")
+    css = (ROOT / "style.css").read_text(encoding="utf-8")
+    js = (ROOT / "app.js").read_text(encoding="utf-8")
+    shell = (ROOT / "shell.html").read_text(encoding="utf-8")
+    leaflet_css = (ROOT / "leaflet.css").read_text(encoding="utf-8")
+    leaflet_js = (ROOT / "leaflet.js").read_text(encoding="utf-8")
 
     slim = [{"name": p["name"], "desc": p["desc"],
              "lat": round(p["lat"], 5), "lon": round(p["lon"], 5),
@@ -335,7 +335,7 @@ def main():
     days = parse_csv(get_csv_text())
     print(f"Parsed {len(days)} days, {sum(len(d['events']) for d in days)} events")
     days = schedule(classify(translate(days)))
-    places = json.loads((ROOT / "data" / "my_maps_places.json").read_text(encoding="utf-8"))
+    places = json.loads((ROOT / "my_maps_places.json").read_text(encoding="utf-8"))
     days = enrich(days, places)
     size = render(days, places)
     print(f"Wrote index.html ({size:,} bytes)")

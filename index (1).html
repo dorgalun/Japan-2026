@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Japan 2026 · Trip Journal</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Japan 2026">
+<meta name="theme-color" content="#141C13">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/*LEAFLET_CSS*/
+</style>
+<style>
+/*APP_CSS*/
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="top">
+    <div class="brandrow">
+      <div class="brand-wrap">
+        <div class="brand"><span class="jp">日本</span><span class="yr">2026</span></div>
+        <div class="brand-sub">Tokyo · Hakone · Kyoto · Nara · Osaka</div>
+      </div>
+      <div class="weatherpill" id="headerWx">🍂 Oct 8–26</div>
+    </div>
+    <div class="daychips" id="dayChips"></div>
+  </header>
+
+  <main>
+
+    <section class="view active" id="view-today">
+      <div class="day-head" id="dayHead"></div>
+      <div id="dayMapWrap" style="display:none"></div>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section class="view" id="view-trip">
+      <div class="hero" id="heroBlock"></div>
+      <div class="section-title"><span class="kanji">旅程</span>Full itinerary<small>19 days</small></div>
+      <div id="tripList"></div>
+    </section>
+
+    <section class="view" id="view-map">
+      <div class="section-title"><span class="kanji">地図</span>Map</div>
+      <div id="mapWrap">
+        <iframe id="mapFrame" src="__EMBED_URL__" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <div class="map-note">
+          <p>Your live My Maps, embedded as-is — edits you make there will show up here too.</p>
+          <a class="btn small ghost" href="__FULL_URL__" target="_blank" rel="noopener">Open full map ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-tasks">
+      <div class="section-title"><span class="kanji">予約</span>Reservations &amp; tasks</div>
+      <div id="taskList"></div>
+    </section>
+
+    <section class="view" id="view-budget">
+      <div class="section-title"><span class="kanji">円</span>Budget</div>
+      <div class="budget-total" id="budgetTotal"></div>
+      <div class="budget-cats" id="budgetCats"></div>
+      <div class="expense-form">
+        <div class="grid">
+          <input type="text" id="expDesc" placeholder="What was it for?">
+          <input type="number" id="expAmount" placeholder="Amount" min="0" step="0.01">
+        </div>
+        <div class="grid">
+          <select id="expCat"></select>
+          <select id="expCurrency"><option>JPY</option><option>ILS</option><option>USD</option></select>
+        </div>
+        <button class="btn" style="width:100%" onclick="addExpense()">Add expense</button>
+      </div>
+      <div id="expenseList"></div>
+    </section>
+
+  </main>
+
+  <nav class="tabs">
+    <button class="active" data-view="today"><span class="seal">今</span>Today</button>
+    <button data-view="trip"><span class="seal">旅</span>Trip</button>
+    <button data-view="map"><span class="seal">地</span>Map</button>
+    <button data-view="tasks"><span class="seal">約</span>Tasks</button>
+    <button data-view="budget"><span class="seal">円</span>Budget</button>
+  </nav>
+
+</div>
+
+<script>
+/*LEAFLET_JS*/
+</script>
+<script>
+const DATA = __DATA__;
+const MY_MAPS_PLACES = __PLACES__;
+</script>
+<script>
+/*APP_JS*/
+</script>
+</body>
+</html>

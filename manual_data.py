@@ -32,10 +32,22 @@ MANUAL_GEO = {
     'Coffee - MMC': (35.6970046, 139.8026522, None),
     'Dinner - MAZ': (35.6794272, 139.7376625, None),
     'Dinner - やき肉玄趣 江洲\nspecial Yakiniku': (35.0311807, 135.7805577, None),
+    'Shitamachi Museum': (35.7102379, 139.7727531, None),
+    'National Museum of Nature and Science': (35.7164273, 139.7763336, None),
+    'If we have time - Zoo': (35.7164476, 139.7725826, 'Ueno Zoo — closed Mondays'),
+    'ABOUT LIFE COFFEE BREWERS': (35.6567022, 139.6958093, None),
+    'Option for afternoon coffee - THE ROASTERY BY NOZY COFFEE': (35.6655724, 139.7047658, None),
+    'KOFFEE MAMEYA': (35.668368, 139.710888, None),
+    "Dinner with Alon and Na'ama - PST pizza": (35.655648, 139.74437, None),
+    'Tokyo Omotesando: Authentic Chopstick-Making Workshop': (35.6668055, 139.7114154, 'Ginza Natsuno chopstick studio, Omotesando'),
 }
 
 # Real travel time for specific legs (minutes), keyed by (date, activity)
 SPECIFIC_DURATION = {
+    ('13.10.26', 'RomanceCar to Hakone (buy bento at the train station)'): 110,
+    ('14.10.26', 'Shinkensen to Kyoto'): 140,
+    ('18.10.26', 'Train to Osaka'): 45,
+    ('21.10.26', 'Shinkensen to Tokyo'): 165,
     ('13.10.26', 'Shinkensen to Kyoto (buy bento at the train station)'): 105,
     ('13.10.26', 'Arriving Hakone'): 15,
     ('18.10.26', 'Trip to Nara from kyoto'): 50,
@@ -47,6 +59,4 @@ SPECIFIC_DURATION = {
 # Travel time that happens BEFORE the row (single "Arriving X" rows with
 # no separate departure row), so the shown time is the true arrival.
 SPECIFIC_PRE_BUFFER = {
-    ('14.10.26', 'Arriving Kyoto'): 150,
-    ('18.10.26', 'Arriving Osaka'): 50,
 }

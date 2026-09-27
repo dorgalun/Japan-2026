@@ -252,4 +252,41 @@ DESC = {
   "The journey out to Narita — allow 1.5–2 hours plus check-in.",
 "Flight from Tokyo to Israel (Narita Airport), Etihad Airlines, connection in Abu Dhabi":
   "The flight home — Narita to Tel Aviv via Abu Dhabi.",
+# --- added after the Oct 2026 sheet revision ---
+"Shitamachi Museum":
+  "A small Ueno museum recreating everyday life in Tokyo's old downtown — shopfronts and tenement rooms you can walk into.",
+"National Museum of Nature and Science":
+  "Ueno's big natural-history museum — dinosaur skeletons, a Japan gallery and a 360° theatre. Easily half a day if you let it.",
+"If we have time - Zoo":
+  "Ueno Zoo, Japan's oldest — pandas, gorillas and a lily-pad bridge across the pond. Closed Mondays.",
+"one by one coffee Ginza":
+  "A small Ginza coffee stand for a quick cup before the train.",
+"RomanceCar to Hakone (buy bento at the train station)":
+  "The Odakyu Romancecar limited express from Shinjuku to Hakone — reserved seats, big windows. Grab an ekiben first.",
+"Shinkensen to Kyoto":
+  "Down the mountain to Odawara, then the bullet train on to Kyoto — around two and a half hours all in.",
+"Train to Osaka":
+  "The short hop from Nara across to Osaka, roughly 45 minutes.",
+"Coffee around the hotel - Notequal Coffee":
+  "A specialty roaster near your Osaka hotel.",
+"Shinkensen to Tokyo":
+  "The bullet train back to Tokyo — about 2.5 hours, plus getting to and from the stations.",
+"Dinner with Alon and Na'ama - PST pizza":
+  "Wood-fired Neapolitan pizza in Higashi-Azabu — one of Tokyo's best-known pizzerias. Booking strongly advised.",
+"ABOUT LIFE COFFEE BREWERS":
+  "A tiny, much-loved Shibuya coffee stand pouring Onibus beans. Mostly standing room.",
+"Option for afternoon coffee - THE ROASTERY BY NOZY COFFEE":
+  "An open, industrial roastery on Cat Street serving single-origin coffee.",
+"KOFFEE MAMEYA":
+  "An unmarked Omotesando counter that works like a bean dispensary — baristas talk you through a wall of roasts. No seating.",
+"Breakfast - AMAM DACOTAN":
+  "A dramatic, much-photographed bakery — inventive savoury and sweet pastries piled high. Gets busy early.",
+"Tokyo Omotesando: Authentic Chopstick-Making Workshop":
+  "The Ginza Natsuno studio in Omotesando — pick your wood, then plane, sand and engrave your own chopsticks to take home.",
+"New York Perfect Cheese Keio Department Store Shinjuku":
+  "A department-store sweets counter known for cheese-cream filled langue de chat cookies — a popular gift box.",
+"COVERT COFFEE":
+  "A small specialty coffee shop for a quiet cup.",
+"Bar - The Bellwood / Lost Bar":
+  "Two Shibuya cocktail bars — The Bellwood is known for its Taisho-era styling and theatrical drinks.",
 }

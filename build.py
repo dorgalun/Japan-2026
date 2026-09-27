@@ -48,10 +48,37 @@ def get_csv_text():
 
 # ---------------------------------------------------------------- parse
 def parse_csv(text):
-    reader = csv.reader(io.StringIO(text))
-    next(reader, None)  # header
+    # Google serves CRLF, and cells can contain embedded newlines. Normalise
+    # line endings first, then let the csv module handle quoting with
+    # newline='' (the documented way to avoid "new-line character seen in
+    # unquoted field").
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    try:
+        rows = list(csv.reader(io.StringIO(text, newline="")))
+    except csv.Error as exc:
+        # Point at the offending line instead of dying with a bare traceback.
+        lines = text.split("\n")
+        bad = None
+        probe = []
+        for i, ln in enumerate(lines, 1):
+            probe.append(ln)
+            try:
+                list(csv.reader(io.StringIO("\n".join(probe), newline="")))
+            except csv.Error:
+                bad = i
+                break
+        msg = [f"ERROR: could not parse the sheet as CSV ({exc})."]
+        if bad:
+            msg.append(f"  Problem appears at or before line {bad} of the sheet:")
+            msg.append(f"    {lines[bad-1][:200]}")
+            msg.append("  A stray double-quote (\") in a cell is the usual cause.")
+        raise SystemExit("\n".join(msg))
+
+    if rows:
+        rows = rows[1:]  # header
+
     days, cur_day, cur_city = [], None, None
-    for row in reader:
+    for row in rows:
         row = row + [""] * (13 - len(row))
         (date, dow, city, activity, tfrom, tto, gmap,
          l1, l2, l3, info, platform, resv) = [c.strip() for c in row[:13]]
